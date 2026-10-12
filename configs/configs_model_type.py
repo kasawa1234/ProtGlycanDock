@@ -1,5 +1,3 @@
-# Under anonymous review.
-
 # model configs for inference and training,
 # such as: protenix-base, protenix-mini, protenix-tiny, protenix-constraint.
 # protenix_{model_size}_{features}_{version}

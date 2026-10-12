@@ -1,5 +1,3 @@
-# Under anonymous review.
-
 # pylint: disable=C0114
 import os
 

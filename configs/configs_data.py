@@ -1,5 +1,3 @@
-# Under anonymous review.
-
 # pylint: disable=C0114,C0301
 import os
 from copy import deepcopy

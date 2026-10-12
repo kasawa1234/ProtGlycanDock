@@ -25,12 +25,15 @@ setup(
     name="protenix",
     python_requires=">=3.11",
     version="0.6.2",
-    description="A trainable PyTorch reproduction of AlphaFold 3.",
+    description="ProtGlycanDock: Protenix-based protein-glycan docking model and benchmark code.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="ProtGlycanDock (anonymous release)",
-    url="",
-    author_email="",
+    author="Minghao Xu, Jiaze Song, Jinyu Wang, Wentao Zhang",
+    url="https://github.com/kasawa1234/ProtGlycanDock",
+    project_urls={
+        "Dataset": "https://huggingface.co/datasets/ProtGlycanDock/ProtGlycanDock",
+        "Issues": "https://github.com/kasawa1234/ProtGlycanDock/issues",
+    },
     packages=find_packages(
         exclude=(
             "assets",

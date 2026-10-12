@@ -1,5 +1,3 @@
-# Under anonymous review.
-
 # pylint: disable=C0114,C0301
 from protenix.config.extend_types import (
     GlobalConfigValue,
