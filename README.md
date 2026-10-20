@@ -1,6 +1,6 @@
 # ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model
 
-This is the official codebase of the paper **ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model**, accepted by **NeurIPS 2026 Evaluations and Datasets Track** ([OpenReview link](https://openreview.net/forum?id=90gsNmRJos)).
+This is the official codebase of the paper **ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model**, accepted by **NeurIPS 2026 Evaluations and Datasets Track** ([OpenReview link](https://openreview.net/forum?id=90gsNmRJos), [arXiv link](https://arxiv.org/abs/2610.26009)).
 
 [Minghao Xu](https://chrisallenming.github.io/), [Jiaze Song](https://kasawa1234.github.io/), Jinyu Wang, [Wentao Zhang](https://zwt233.github.io/)
 
@@ -14,12 +14,14 @@ ProtGlycanDock is a curated protein–glycan docking dataset derived from public
 
 The dataset contains **1,781 protein–glycan complexes** across four subsets:
 
-| Subset               | Split label           | Cases | Purpose                                                      |
-| -------------------- | --------------------- | ----: | ------------------------------------------------------------ |
-| Train                | `train`               | 1,374 | Training set used for model fitting                          |
-| Validation           | `valid`               |   125 | Validation set for model selection                           |
-| Protein-holdout test | `test`                |   148 | Protein generalization: evaluation on held-out protein clusters |
-| Glycan-holdout test  | `glycan_holdout_test` |   134 | Glycan generalization: evaluation on held-out glycans        |
+
+| Subset               | Split label           | Cases | Purpose                                                         |
+| -------------------- | --------------------- | ----- | --------------------------------------------------------------- |
+| Train                | `train`               | 1,374 | Training set used for model fitting                             |
+| Validation           | `valid`               | 125   | Validation set for model selection                              |
+| Protein-holdout test | `test`                | 148   | Protein generalization: evaluation on held-out protein clusters |
+| Glycan-holdout test  | `glycan_holdout_test` | 134   | Glycan generalization: evaluation on held-out glycans           |
+
 
 The [released files](https://huggingface.co/datasets/ProtGlycanDock/ProtGlycanDock/tree/main) are organized as follows:
 
@@ -123,6 +125,7 @@ The bundled `finetune_*.sh` scripts are minimal entry points: adjust `export PRO
 
 Fine-tuning variants:
 
+
 | Script                                   | Base checkpoint                      | Glycan topological features | Glycan energy loss    |
 | ---------------------------------------- | ------------------------------------ | --------------------------- | --------------------- |
 | `finetune_default.sh`                    | `protenix_base_default_v0.5.0.pt`    | no                          | no                    |
@@ -133,6 +136,7 @@ Fine-tuning variants:
 | `finetune_constraint_glycan.sh`          | `protenix_base_constraint_v0.5.0.pt` | yes                         | no                    |
 | `finetune_constraint_chi_0.01.sh`        | `protenix_base_constraint_v0.5.0.pt` | no                          | yes, `alpha_chi=0.01` |
 | `finetune_constraint_glycan_chi_0.01.sh` | `protenix_base_constraint_v0.5.0.pt` | yes                         | yes, `alpha_chi=0.01` |
+
 
 Key fields to edit in each script (and in `configs/configs_data.py` if you change dataset keys):
 
@@ -247,19 +251,22 @@ This codebase is released under the Apache License 2.0, as described in [LICENSE
 
 The dataset is released separately under CC BY 4.0; see the [dataset card](https://huggingface.co/datasets/ProtGlycanDock/ProtGlycanDock/blob/main/README.md).
 
+## Acknowledgements
+
+This work is supported by Fundamental and Interdisciplinary Disciplines Breakthrough Plan of the Ministry of Education of China (JYB2025XDXM113), Beijing Municipal Natural Science Foundation (Grant No. L2603008), National Natural Science Foundation of China (92470121, 62402016), National Key RD Program of China (2024YFA1014003), Zhongguancun Academy (C20250204, C20250602),  Beijing Major Science and Technology Project (Z251100008125043, Z251100008425023), and High-performance Computing Platform of Peking University.
+
 ## Citation
 
 If you find this dataset, benchmark, or codebase helpful in your research, please cite the following paper.
 
 ```bibtex
-@inproceedings{xu2026protglycandock,
-  title={{ProtGlycanDock}: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model},
-  author={Minghao Xu and Jiaze Song and Jinyu Wang and Wentao Zhang},
-  booktitle={NeurIPS 2026 Evaluations and Datasets Track},
-  year={2026},
-  note={Accepted},
-  url={https://openreview.net/forum?id=90gsNmRJos}
+@misc{xu2026protglycandockaccurateproteinglycandocking,
+      title={ProtGlycanDock: Towards Accurate Protein-Glycan Docking with Tailored Dataset, Benchmark and Model}, 
+      author={Minghao Xu and Jiaze Song and Jinyu Wang and Wentao Zhang},
+      year={2026},
+      eprint={2610.26009},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2610.26009}, 
 }
 ```
-
-The citation will be updated with the final proceedings details when available.
